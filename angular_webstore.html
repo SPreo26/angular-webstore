@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!--title text here is a placeholder if no title data found via api call-->
+  <title>Symphony Webstore - Available Products</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-switch/3.3.2/css/bootstrap2/bootstrap-switch.min.css">
+  <link rel="stylesheet" href="./angular_webstore_files/3-col-portfolio.css">
+
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-switch/3.3.2/js/bootstrap-switch.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.9/angular.min.js"></script>
+  <script src="./angular_webstore_files/products_ctrl.js"></script>
+  <script src="./angular_webstore_files/helper.js"></script>
+</head>
+
+<body ng-app="app" id="ng-app">
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+        <!--navbar brand text here is a placeholder if no title data found via api call-->
+        <p class="navbar-brand" href="#">Symphony Webstore - Available Products</p>
+      </div>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+  </nav>
+
+  <!-- Page Content -->
+  <div id="productsCtrl" class="container" ng-controller="productsCtrl" ng-init="setup()">
+
+    <!-- Page Header -->
+    <div class="row page-header">
+      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+        <h4>Displaying {{numVisProducts}} of {{numProducts}} products
+        </h4>
+      </div>
+      <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 pull-down-buttons">
+        <h5 class="sort-by-title"><strong><i>Sort by:</i></strong></h5>
+        <div class="sort-button-div">
+          <button type="button" class="btn btn-info sort-button" ng-click="sortBy('name')">Name</button>
+          <button type="button" class="btn btn-info sort-button" ng-click="sortBy('msrpInCents')">Price</button>
+          <button type="button" class="btn btn-info sort-button" ng-click="sortBy('createdAt')">Date</button>
+        </div>
+      </div>
+      <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 pull-down-switch">
+        <div class="filter-checkbox-div">
+          <input id="switch-disabled" name="filter-checkbox" type="checkbox">
+        </div>
+      </div>
+    </div>
+
+    <div class="portfolio-item" ng-repeat="productRow in products">
+      <div class="row">
+        <div class="col-md-4" ng-repeat="product in productRow">
+          <img class="img-responsive" ng-src="{{product.image}}" alt="Image not found" onerror="this.src='angular_webstore_files/300px-No_image_available.svg.png'">
+          <h3>
+            {{product.name}}
+          </h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 productPrice" ng-repeat="product in productRow">
+          <p><i>{{product.price}}</i></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="navbar-bottom navbar-inverse ">
+    <p class="navbar-brand"></p>
+  </footer>
+</body>
+
+</html>

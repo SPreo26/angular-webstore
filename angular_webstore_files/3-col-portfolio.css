@@ -1,0 +1,54 @@
+body {
+  padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+  margin-bottom: 0px;
+}
+
+
+.portfolio-item {
+  margin-bottom: 25px;
+}
+
+footer{
+  height: 30px;
+  margin: 0 0;
+  text-align: center;
+  vertical-align: middle;
+  overflow: hidden
+}
+
+footer .navbar-brand{
+  position: relative;
+  bottom: 10px;
+  float: none;
+  font-size: 10px;
+}
+
+.navbar-inverse .navbar-brand:hover, 
+.navbar-inverse .navbar-brand:focus {
+  background-color: transparent;
+  color: #999999;
+}
+
+.bootstrap-switch-handle-on, .bootstrap-switch-handle-off{
+  font-family: helvetica !important;
+}
+
+.bootstrap-switch-handle-on{
+  color: #DDD !important;
+}
+
+.bootstrap-switch-handle-off{
+  color: #DDD !important;
+}
+
+.sort-button-div{
+  text-align: center;
+}
+
+.filter-checkbox-div{
+  float: right;
+}
+
+.sort-by-title{
+  float:left;
+}
