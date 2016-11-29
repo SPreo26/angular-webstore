@@ -34,11 +34,11 @@ footer .navbar-brand{
 }
 
 .bootstrap-switch-handle-on{
-  color: #DDD !important;
+  color: #777 !important;
 }
 
 .bootstrap-switch-handle-off{
-  color: #DDD !important;
+  color: #FAFAFA !important;
 }
 
 .sort-button-div{
@@ -51,4 +51,10 @@ footer .navbar-brand{
 
 .sort-by-title{
   float:left;
+}
+
+.sort-button{
+  color: #FAFAFA;
+  background-image: linear-gradient(to bottom,#2f96b4,#5bc0de);
+  text-shadow: 0 -1px 0 rgba(0,0,0,.25);
 }

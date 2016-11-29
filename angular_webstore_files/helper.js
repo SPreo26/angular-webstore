@@ -16,5 +16,5 @@ $('document').ready(function(){
     var $this=$(this);
     $this.css('margin-top', $this.parent().height()-$this.height()-3)
   });
-  $("[name='filter-checkbox']").bootstrapSwitch({offText:'Show all under $20', onText:'Show all', handleWidth:'150px', onColor:'success', offColor:'info', onSwitchChange:filter});
+  $("[name='filter-checkbox']").bootstrapSwitch({offText:'Show all under $20', onText:'Show all', handleWidth:'150px', onColor:'default', offColor:'info', onSwitchChange:filter});
 });
