@@ -77,15 +77,25 @@
 
     $scope.sortBy = function(criteria){
       $scope.compareProp = criteria;
+      
+      //initialize or toggle sign for ascending/descending sort
+      if($scope.compareProp!=$scope.PrevCompareProp){
+        $scope.compareSign = 1;
+        $scope.PrevCompareProp=$scope.compareProp;
+      }
+      else{
+        $scope.compareSign = -$scope.compareSign;
+      }
+
       $scope.visibleProducts.sort($scope.compare);
       $scope.setupProducts();//must setup products again after sort applied
     }
 
     $scope.compare = function compare(a,b) {
       if (a[$scope.compareProp] < b[$scope.compareProp])
-        return -1;
+        return -$scope.compareSign;
       if (a[$scope.compareProp] > b[$scope.compareProp])
-        return 1;
+        return $scope.compareSign;
       return 0;
     }
 
